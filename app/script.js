@@ -1,0 +1,1 @@
+var visortexto = document.getElementById('div-visor').innerHTML
