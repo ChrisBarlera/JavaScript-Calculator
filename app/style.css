@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+}
+
+#calculadora {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 400px;
+    height: 600px;
+    background-color: rgb(251, 229, 202);
+}
+
+#div-visor{
+    background-color: lightgray;
+}
+
+#div-numeros {
+    width: 60%;
+    background-color: rgb(221, 56, 56);
+}
