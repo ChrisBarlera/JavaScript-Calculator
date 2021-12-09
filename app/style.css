@@ -3,25 +3,94 @@
     padding: 0;
 }
 
-main {
+html,body {
+    width: 100%;
+    height: 100%;
 }
 
-#calculadora {
+main {
     position: absolute;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 2fr 1fr;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
     width: 400px;
     height: 600px;
     background-color: rgb(251, 229, 202);
 }
 
 #div-visor{
-    background-color: lightgray;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: rgb(89, 233, 101);
 }
 
 #div-numeros {
-    width: 60%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
     background-color: rgb(221, 56, 56);
+}
+
+button{
+    font-size: 1.5em;
+    border: 0;
+}
+
+.all-num {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+
+#zero-num {
+    width: 90%;
+    height: 70px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-radius: 20px;
+}
+
+#div-simbolos {
+    background-color: lightgreen;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.all-simb {
+    width: 90%;
+    height: 90%;
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+#clear-simb {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: rgb(44, 195, 255);
+}
+
+#soma-simb{
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+#equal-simb{
+    grid-row-start: 4;
+    grid-row-end: 6;
+    background-color: turquoise;
 }
