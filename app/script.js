@@ -1,1 +1,53 @@
-var visortexto = document.getElementById('div-visor').innerHTML
+const visor = document.getElementById('div-visor')
+const characters = document.getElementsByClassName('char')
+const simbolos = document.getElementsByClassName('all-simb')
+
+//Pega innerHTML de objeto da classe char e adiciona no texto do visor
+for (let index = 0; index < characters.length; index++) {
+    const charzinho = characters[index];
+    charzinho.onclick = function () {
+        visor.innerHTML = visor.innerHTML + this.innerHTML
+    }
+}
+
+
+function conta(valor1, valor2, operacao) {
+    let a = parseInt(valor1);
+    let b = parseInt(valor2);
+    let resultado;
+    if (operacao === '-') {
+        resultado = a - b
+        return resultado
+    }
+    if (operacao === '+') {
+        resultado = a + b
+        return resultado
+    }
+    if (operacao === 'X') {
+        resultado = a * b
+        return resultado
+    }
+    if (operacao === '/') {
+        resultado = a / b
+        return resultado
+    }
+}
+const equalBt = document.getElementById('equal-simb')
+equalBt.onclick = function () {
+    let valor1;
+    let operacao;
+    let valor2;
+    let pos;
+    let text = visor.innerHTML
+    for (let index = 0; index < simbolos.length; index++) {
+        const element = simbolos[index];
+        if (text[index] === element.innerHTML) {
+            pos = index
+        }
+    }
+    valor1 = text.slice(0, pos)
+    operacao = text.charAt(pos)
+    valor2 = text.slice(pos+1, text.length)
+    let resultado = conta(valor1,valor2,operacao)
+    visor.innerHTML = resultado
+}
