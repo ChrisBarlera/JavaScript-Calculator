@@ -51,3 +51,8 @@ equalBt.onclick = function () {
     let resultado = conta(valor1,valor2,operacao)
     visor.innerHTML = resultado
 }
+
+const clearBt = document.getElementById('clear-simb')
+clearBt.onclick = function () {
+    visor.innerHTML = ''
+}
