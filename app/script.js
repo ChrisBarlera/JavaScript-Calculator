@@ -39,10 +39,15 @@ equalBt.onclick = function () {
     let valor2;
     let pos;
     let text = visor.innerHTML
-    for (let index = 0; index < simbolos.length; index++) {
-        const element = simbolos[index];
-        if (text[index] === element.innerHTML) {
-            pos = index
+    //em cada um de text, vou ter que verificar se é igual a qualquer um de simbolos
+    for (let index = 0; index < text.length; index++) {
+        const char = text[index];
+        for (let index = 0; index < simbolos.length; index++) {
+            const simb = simbolos[index];
+            if (char === simb.innerHTML) {
+                operacao === char
+                pos = text.indexOf(char)
+            }
         }
     }
     valor1 = text.slice(0, pos)
