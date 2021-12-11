@@ -20,7 +20,8 @@ main {
     transform: translate(-50%, -50%);
     width: 400px;
     height: 600px;
-    background-color: rgb(251, 229, 202);
+    background-color: rgb(200, 200, 200);
+    border-radius: 10px;
 }
 
 #div-visor{
