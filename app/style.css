@@ -49,6 +49,7 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgb(165, 165, 165);
+    border-bottom-left-radius: 10px;
 }
 
 button{
@@ -80,6 +81,7 @@ button{
     align-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border-bottom-right-radius: 10px;
 }
 
 .all-simb {
