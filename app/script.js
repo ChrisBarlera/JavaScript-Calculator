@@ -12,8 +12,8 @@ for (let index = 0; index < characters.length; index++) {
 
 
 function conta(valor1, valor2, operacao) {
-    let a = parseInt(valor1);
-    let b = parseInt(valor2);
+    let a = parseFloat(valor1);
+    let b = parseFloat(valor2);
     let resultado;
     if (operacao === '-') {
         resultado = a - b
