@@ -93,7 +93,11 @@ button{
 
 #clear-simb {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 2;
+    background-color: rgb(44, 195, 255);
+}
+
+#undo-simb {
     background-color: rgb(44, 195, 255);
 }
 

@@ -61,3 +61,7 @@ const clearBt = document.getElementById('clear-simb')
 clearBt.onclick = function () {
     visor.innerHTML = ''
 }
+const undoBt = document.getElementById("undo-simb")
+undoBt.onclick = function (){
+    visor.innerHTML = visor.innerHTML.slice(0,visor.innerHTML.length-1)
+}
