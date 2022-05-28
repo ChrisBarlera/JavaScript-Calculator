@@ -53,46 +53,15 @@ for (let index = 0; index < simbolos.length; index++) {
         // ///////////////////////// //
         // CASO JA TENHA UMA OPERAÇAO NO VISOR //
         {
-            // conta quantos simbolos tem no visor e grava a posicao deles
-            let simbCount = 0
-            let pos_A = 0
-            let pos_B = 0
-            let pos_C = 0
-            for (let i = 0; i < visor.innerHTML.length; i++) {
-                const charAtual = visor.innerHTML.charAt(i);
-                for (let j = 0; j < simbolos.length; j++) {
-                    const elementAgora = simbolos[j];
-                    if (charAtual == elementAgora.innerHTML) {
-                        switch (simbCount) {
-                            case 0:
-                                pos_A = i
-                                break;
-                            case 1:
-                                pos_B = i
-                                break;
-                            case 2:
-                                pos_C = i
-                                break;
-                        }
-                        simbCount++
-                    }
-                }
-            }
-
-            switch (simbCount) {
+            x = quantosSimbsNoVisor()
+            switch (x['simbCount']) {
                 case 2:
                     if (visor.innerHTML.charAt(0) != '-') {
-                        let valorA = visor.innerHTML.substring(0,pos_A);
-                        let valorB = visor.innerHTML.substring(pos_A+1,visor.innerHTML.length-1);
-                        let operacao = visor.innerHTML.charAt(pos_A);
-                        visor.innerHTML = conta(valorA,valorB,operacao) + simbAtual;
+                        updateVisorPosSimb(x['pos_A'], simbAtual)
                     }
                     break;
                 case 3:
-                    let valorA = visor.innerHTML.substring(0,pos_B);
-                    let valorB = visor.innerHTML.substring(pos_B+1,visor.innerHTML.length-1);
-                    let operacao = visor.innerHTML.charAt(pos_B);
-                    visor.innerHTML = conta(valorA,valorB,operacao) + simbAtual;
+                    updateVisorPosSimb(x['pos_B'], simbAtual)
             }
         }
         // ////////////////////////////////// //
@@ -133,6 +102,7 @@ equalBt.onclick = function () {
     let resultado = conta(valor1,valor2,operacao)
     visor.innerHTML = resultado
 }
+
 function conta(valor1, valor2, operacao) {
     let a = parseFloat(valor1);
     let b = parseFloat(valor2);
@@ -152,4 +122,39 @@ function conta(valor1, valor2, operacao) {
     }
 
     return resultado;
+}
+
+function updateVisorPosSimb(posicao,simbolo) { //separa os números, resolve operacoes e atualiza visor (em casos de mais de um simbolo)
+    let valorA = visor.innerHTML.substring(0,posicao);
+    let valorB = visor.innerHTML.substring(posicao+1,visor.innerHTML.length-1);
+    let operacao = visor.innerHTML.charAt(posicao);
+    visor.innerHTML = conta(valorA,valorB,operacao) + simbolo;
+}
+
+function quantosSimbsNoVisor() { //conta quantos simbolos tem no visor e grava a posicao deles
+    let simbCount = 0
+    let pos_A = 0
+    let pos_B = 0
+    let pos_C = 0
+    for (let i = 0; i < visor.innerHTML.length; i++) {
+        const charAtual = visor.innerHTML.charAt(i);
+        for (let j = 0; j < simbolos.length; j++) {
+            const elementAgora = simbolos[j];
+            if (charAtual == elementAgora.innerHTML) {
+                switch (simbCount) {
+                    case 0:
+                        pos_A = i
+                        break;
+                    case 1:
+                        pos_B = i
+                        break;
+                    case 2:
+                         pos_C = i
+                         break;
+                }
+                simbCount++
+            }
+        }
+    }
+    return {simbCount, pos_A, pos_B, pos_C}
 }
