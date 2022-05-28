@@ -1,2 +1,6 @@
-<h1>WORK IN PROGRESS</h1>
+# WORK IN PROGRESS
 Projeto de calculadora básica
+
+## Limitações
+- Uma operação por vez no visor
+- 
