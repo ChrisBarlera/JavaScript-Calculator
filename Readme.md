@@ -1,6 +1,6 @@
 # WORK IN PROGRESS
 # Calculadora
-Projeto de calculadora feita desenvolvida com HTML, CSS e JavaScript.
+Projeto de calculadora desenvolvida com HTML, CSS e JavaScript.
 
 ## Atuais funcionalidades
 - Operações básicas (adição, subtração, multiplicação e divisão) funcionam normalmente
