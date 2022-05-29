@@ -80,26 +80,14 @@ undoBt.onclick = function (){
 
 // onclick para botao = (igual)
 equalBt.onclick = function () {
-    let valor1;
-    let operacao;
-    let valor2;
-    let pos;
-    let text = visor.innerHTML
-    // salva a posicao do char de operacao e salva ele tbm
-    for (let index = 0; index < text.length; index++) {
-        const char = text[index];
-        for (let index = 0; index < simbolos.length; index++) {
-            const simb = simbolos[index];
-            if (char === simb.innerHTML) {
-                operacao === char
-                pos = text.indexOf(char)
-            }
-        }
+    let resultado;
+
+    x = quantosSimbsNoVisor()
+    if (x['simbCount'] == 2) {
+        let valorA = visor.innerHTML.substring(0,x['pos_B']);
+        let valorB = visor.innerHTML.substring(x['pos_B'],visor.innerHTML.length);
+        resultado = conta(valorA,valorB,'+')
     }
-    valor1 = text.slice(0, pos)
-    operacao = text.charAt(pos)
-    valor2 = text.slice(pos+1, text.length)
-    let resultado = conta(valor1,valor2,operacao)
     visor.innerHTML = resultado
 }
 
