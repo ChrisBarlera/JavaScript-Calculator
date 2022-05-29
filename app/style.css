@@ -58,6 +58,10 @@ button{
     border: 0;
 }
 
+.char:hover{
+    background-color: #CCCCCC;
+}
+
 .all-num {
     width: 70px;
     height: 70px;
@@ -99,18 +103,27 @@ button{
     grid-column-end: 2;
     background-color: rgb(44, 195, 255);
 }
+#clear-simb:hover {
+    background-color: rgb(4, 155, 215);
+}
 
 #undo-simb {
     background-color: rgb(44, 195, 255);
 }
+#undo-simb:hover {
+    background-color: rgb(4, 155, 215);
+}
 
-#soma-simb{
+#soma-simb {
     grid-row-start: 3;
     grid-row-end: 6;
 }
 
-#equal-simb{
+#equal-simb {
     grid-row-start: 4;
     grid-row-end: 6;
-    background-color: turquoise;
+    background-color: rgb(64, 224, 208);
+}
+#equal-simb:hover {
+    background-color: rgb(24, 184, 168);
 }
