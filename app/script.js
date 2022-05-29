@@ -5,12 +5,17 @@ const numbs = document.getElementsByClassName('all-num')
 const equalBt = document.getElementById('equal-simb')
 const clearBt = document.getElementById('clear-simb')
 const undoBt = document.getElementById("undo-simb")
+var igualClicado = false
 
 // onclick para todos os NUMEROS
 for (let index = 0; index < numbs.length; index++) {
     const element = numbs[index];
     const charAtual = element.innerHTML
     element.onclick = function () {
+        if (igualClicado) {
+            visor.innerHTML = ""
+            igualClicado = false
+        }
         if (charAtual == '.') {
             if (visor.innerHTML.charAt(visor.innerHTML.length-1) != charAtual) {
                 visor.innerHTML = visor.innerHTML + charAtual
@@ -80,8 +85,8 @@ undoBt.onclick = function (){
 
 // onclick para botao = (igual)
 equalBt.onclick = function () {
+    igualClicado = true;
     let resultado;
-
     let x = quantosSimbsNoVisor()
     if (x['simbCount'] == 2) { //caso os dois numeros sejam negativos
         let valorA = visor.innerHTML.substring(0,x['pos_B']);

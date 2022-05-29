@@ -11,4 +11,3 @@ Projeto de calculadora desenvolvida com HTML, CSS e JavaScript.
 - Compreende APENAS operações básicas; Radiciação, potenciação e similares não disponíveis
 - Uma operação por vez no visor (o que gera a próxima limitação)
 - Ordem de prioridade das operações não está sendo respeitada
-- Digitar um número com um resultado já no visor concatena esse número ao resultado
