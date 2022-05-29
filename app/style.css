@@ -38,6 +38,7 @@ main {
     color: rgb(100, 100, 100);
     font-size: 3em;
     border-radius: 20px;
+    overflow: auto;
 }
 
 #div-numeros {
