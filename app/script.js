@@ -82,11 +82,15 @@ undoBt.onclick = function (){
 equalBt.onclick = function () {
     let resultado;
 
-    x = quantosSimbsNoVisor()
-    if (x['simbCount'] == 2) {
+    let x = quantosSimbsNoVisor()
+    if (x['simbCount'] == 2) { //caso os dois numeros sejam negativos
         let valorA = visor.innerHTML.substring(0,x['pos_B']);
         let valorB = visor.innerHTML.substring(x['pos_B'],visor.innerHTML.length);
         resultado = conta(valorA,valorB,'+')
+    } else {
+        let valorA = visor.innerHTML.substring(0,x['pos_A']);
+        let valorB = visor.innerHTML.substring(x['pos_A']+1,visor.innerHTML.length);
+        resultado = conta(valorA,valorB,visor.innerHTML.charAt(x['pos_A']))
     }
     visor.innerHTML = resultado
 }
