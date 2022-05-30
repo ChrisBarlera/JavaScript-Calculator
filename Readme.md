@@ -1,4 +1,3 @@
-# WORK IN PROGRESS
 # Calculadora
 Projeto de calculadora desenvolvida com HTML, CSS e JavaScript.
 
