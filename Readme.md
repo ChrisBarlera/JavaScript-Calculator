@@ -2,6 +2,7 @@
 Projeto de calculadora desenvolvida com HTML, CSS e JavaScript.
 
 ![Demonstração da calculadora](https://user-images.githubusercontent.com/44930401/185703103-b3d3021b-d1e8-4c82-83f8-f3a5c7e4cf1f.gif)
+([Teste aqui](app/main/index.html))
 
 ## Atuais funcionalidades
 - Operações básicas (adição, subtração, multiplicação e divisão) funcionam normalmente
